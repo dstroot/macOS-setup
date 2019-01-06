@@ -4,6 +4,8 @@
 
 The purpose of this guide is to document how to manage your Mac like a boss. After much trial and error I believe this is the fastest, most efficient method to set up a clean, organized, and up-to-date development environment for a Mac.
 
+The overview is presented here, and the details are maintained in the [wiki](https://github.com/dstroot/macOS-setup/wiki)
+
 ## Goals
 
 I’m a polygot fullstack developer so I have a fairly complex setup. Our goals here are:
@@ -164,7 +166,7 @@ Advantages:
 
 1.  Delve does not install. https://github.com/go-delve/homebrew-delve/issues/17 Fix this by manually installing the cert (unzip the cached .tar.gz, run gencert which lives in scripts):
 
-```
+```sh
 $ cd ~/Library/Caches/Homebrew
 $ tar -zxvf delve-1.0.0-rc.1.tar.gz
 $ cd delve-1.0.0-rc.1/scripts
