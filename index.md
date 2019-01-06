@@ -30,6 +30,14 @@ I’m a polygot fullstack developer so I have a fairly complex setup. Our goals 
      - Snippets
      - etc.
 
+## Key repositories
+
+There are three very important repositories that contain all configuration. I would like to explain the purpose of each.
+
+- **[dotfiles](https://github.com/dstroot/dotfiles)** - not actually what it sounds like. My dotfiles are actually backed up by [mackup](https://github.com/lra/mackup). Mackup is a community-driven tool for backing up and restoring system and application settings. This is called dotfiles because that was it's origin and now mainly because [Strap](https://github.com/MikeMcQuaid/strap) installs it automatically along with the "homebrew-brewfile" repo below.
+- **[homebrew-brewfile](https://github.com/dstroot/homebrew-brewfile)** - This repo contains my brewfile. This lists everything that I install via Homebrew. This is automatically processed via the bootstrap script called "strap". See the wiki for more information.
+- **[.macos](https://github.com/dstroot/.macos)** - This repository contains the settings for the MacOS operating system and applications and utilities. The origin comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing MacOS [configuration script](https://github.com/mathiasbynens/dotfiles/blob/master/.macos).
+
 ## Building Blocks
 
 We want to use the best tools out there - e.g. the ones with the most community support and momentum and the best functionality.
@@ -53,6 +61,17 @@ We want to use the best tools out there - e.g. the ones with the most community 
 - **Backup: Mackup**. Backing up and Restoring our .dotfiles (our configuration) with [mackup](https://github.com/lra/mackup). Mackup is a community-driven tool for backing up and restoring system and application settings. See dotfiles section below.
 - **Default OSX Configuration: .osx**. Solid defaults based on [Mathias Bynens](https://mathiasbynens.be) ledgendary [OSX script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx), but highly modularized. Maintained separately in `.osx`.
 - **Dot Script**. Bringing it all together with a `dot` script that keeps everything updated.
+
+## Bugs
+
+If you run into any issues, please [open an issue](https://github.com/dstroot/macOS-setup/issues) on this repository and I'd love to get it fixed. Or, pull requests are always appreciated.
+
+## Thanks
+
+- Way back in the day I forked [Zach Holman's](http://github.com/holman)' excellent [dotfiles](http://github.com/holman/dotfiles) as my initial starting point. I liked his organization and approach.
+- Much of the OSX defaults script comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing [dotfiles](https://github.com/mathiasbynens/dotfiles). Mathias' OSX defaults script is legendary.
+
+  [MacOS Sierra](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c)
 
 # ==================
 
@@ -384,3 +403,5 @@ If you run into any issues, please [open an issue](https://github.com/dstroot/do
 - I forked [Zach Holman's](http://github.com/holman)' excellent [dotfiles](http://github.com/holman/dotfiles) as my initial starting point. I liked his organization and approach.
 - Much of the OSX defaults script comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing [dotfiles](https://github.com/mathiasbynens/dotfiles). Mathias' OSX defaults script is legendary.
   [MacOS Sierra](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c)
+
+  https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
