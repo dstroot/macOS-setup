@@ -14,7 +14,6 @@ I’m a polygot fullstack developer so I have a fairly complex setup. Our goals 
 2. Keep all **software updated regularly** (and keep track of what is installed).
 3. Have a great set of **MacOS defaults**.
 4. Have a **very** productive development environment:
-
    - A great shell environment
      - Aliases
      - Fonts
@@ -22,7 +21,6 @@ I’m a polygot fullstack developer so I have a fairly complex setup. Our goals 
      - Prompt
      - etc.
    - A great editor environment
-
      - Colors
      - Fonts
      - Packages
@@ -35,7 +33,9 @@ I’m a polygot fullstack developer so I have a fairly complex setup. Our goals 
 There are three very important repositories that contain all configuration. I would like to explain the purpose of each.
 
 - **[dotfiles](https://github.com/dstroot/dotfiles)** - not actually what it sounds like. My dotfiles are actually backed up by [mackup](https://github.com/lra/mackup). Mackup is a community-driven tool for backing up and restoring system and application settings. This is called dotfiles because that was it's origin and now mainly because [Strap](https://github.com/MikeMcQuaid/strap) installs it automatically along with the "homebrew-brewfile" repo below.
+
 - **[homebrew-brewfile](https://github.com/dstroot/homebrew-brewfile)** - This repo contains my brewfile. This lists everything that I install via Homebrew. This is automatically processed via the bootstrap script called "strap". See the wiki for more information.
+
 - **[.macos](https://github.com/dstroot/.macos)** - This repository contains the settings for the MacOS operating system and applications and utilities. The origin comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing MacOS [configuration script](https://github.com/mathiasbynens/dotfiles/blob/master/.macos).
 
 ## Building Blocks
@@ -43,30 +43,44 @@ There are three very important repositories that contain all configuration. I wo
 We want to use the best tools out there - e.g. the ones with the most community support and momentum and the best functionality.
 
 - **Bootstrap Your System**
+
   - [Strap](https://github.com/MikeMcQuaid/strap) is a script to bootstrap a minimal MacOS development system. It was developed by Mike McQuaid and is used by Github.
+
 - **Shell: Zsh**. Zsh is awesome, really. To use Zsh like a boss we will install [.oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). It autoupdates, has great plugins and a very active community behind it. Your settings will be backed up by Mackup below. Resources:
+
   - [Why Zsh](http://code.joejag.com/2014/why-zsh.html)
   - [Pure prompt](https://github.com/sindresorhus/pure)
   - [Powerlevel9k prompt](https://github.com/bhilburn/powerlevel9k)
+
 - **Terminal: iTerm2** for our terminal program. [iTerm2](http://iterm2.com/) is free and it rocks. Your settings will be backed up by Mackup. Resources:
+
   - [Iterm2-color-schemes](http://iterm2colorschemes.com/)
   - Font: Source Code Pro Light
+
 - **Editor: Atom** as our code editor. Your settings, packages, etc. will all be backed up by Mackup.
+
 - **Tool Version Management: n and rbenv**. Manage your Ruby and Node versions:
+
   - [n](https://github.com/tj/n) for node (other possibilities: NVM)
   - [rbenv](https://github.com/sstephenson/rbenv) for [Ruby](https://www.ruby-lang.org/en/) (Other possibilities: RVM )
+
 - **Package Management: Homebrew, homebrew cask, npm/yarn, pip**. Installing Binaries with [homebrew](http://brew.sh/). Homebrew is a community-driven package installer and an essential tool for every hacker's toolkit. Homebrew automates the setup, compiling and linking of binaries. It also makes updating and uninstalling binaries a breeze. Resources:
+
   - [About Homebrew](http://mac.tutsplus.com/tutorials/terminal/homebrew-demystified-os-xs-ultimate-package-manager/)
+
 - **Homebrew cask**. Installing Apps (and fonts!) with homebrew [cask](http://caskroom.io/). Homebrew Cask is an extension for Homebrew that allows you to automate the installation of Mac Apps and Fonts.
-- **Backup: Mackup**. Backing up and Restoring our .dotfiles (our configuration) with [mackup](https://github.com/lra/mackup). Mackup is a community-driven tool for backing up and restoring system and application settings. See dotfiles section below.
+
+- **Dotfiles Management and Backup: Mackup**. Backing up and Restoring our .dotfiles (our configuration) with [mackup](https://github.com/lra/mackup). Mackup is a community-driven tool for backing up and restoring system and application settings. See dotfiles section below.
+
 - **Default OSX Configuration: .osx**. Solid defaults based on [Mathias Bynens](https://mathiasbynens.be) ledgendary [OSX script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx), but highly modularized. Maintained separately in `.osx`.
+
 - **Dot Script**. Bringing it all together with a `dot` script that keeps everything updated.
 
 ## Bugs
 
 If you run into any issues, please [open an issue](https://github.com/dstroot/macOS-setup/issues) on this repository and I'd love to get it fixed. Or, pull requests are always appreciated.
 
-## Thanks
+### Thanks
 
 - Way back in the day I forked [Zach Holman's](http://github.com/holman)' excellent [dotfiles](http://github.com/holman/dotfiles) as my initial starting point. I liked his organization and approach.
 - Much of the OSX defaults script comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing [dotfiles](https://github.com/mathiasbynens/dotfiles). Mathias' OSX defaults script is legendary.
