@@ -64,14 +64,13 @@ Resources:
   - [Iterm2-color-schemes](http://iterm2colorschemes.com/)
   - Font: Source Code Pro Light
 
-- **Editor: Atom** as our code editor. Your settings, packages, etc. will all be backed up by Mackup.  Lately I have been using VSC and I am getting used to it.  So my editor may change in the future.  
+- **Editor: Visual Studio Code** as our code editor. [VSCcode](https://code.visualstudio.com/) replaced Atom as my main editor. 
 
-- **Tool Version Management: n and rbenv**. Manage your Ruby and Node versions:
+- **Tool Version Management: n**. Manage Node versions:
 
   - [n](https://github.com/tj/n) for node (other possibilities: NVM)
-  - [rbenv](https://github.com/sstephenson/rbenv) for [Ruby](https://www.ruby-lang.org/en/) (Other possibilities: RVM)  NOTE: I haven't done any Ruby development in years so this is going away at some point.  
 
-- **Package Management: Homebrew, npm/yarn, pip**. Homebrew is a community-driven package installer and an essential tool for every hacker's toolkit. Homebrew automates the setup, compiling and linking of binaries. It also makes updating and uninstalling binaries a breeze. Resources:
+- **Package Management: Homebrew, npm/yarn, pip**. Homebrew is a community-driven package installer and an essential tool for every hacker's toolkit. Homebrew automates the setup, compiling and linking of binaries. It also makes updating and uninstalling binaries a breeze. It will be automatically installed by Strap above. Resources:
 
   - [About Homebrew](http://mac.tutsplus.com/tutorials/terminal/homebrew-demystified-os-xs-ultimate-package-manager/)
 
@@ -87,33 +86,4 @@ If you run into any issues, please [open an issue](https://github.com/dstroot/ma
 - Much of the OSX defaults script comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing [dotfiles](https://github.com/mathiasbynens/dotfiles). Mathias' OSX defaults script is legendary.
 
   [MacOS Sierra](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c)
-
-# ==================
-
-### Install your printer
-
-1.  Install the printer software. //tower/Volumes/Software/Drivers
-2.  Go ahead and manually install your printer via "System Preferences/Printers & Scanners".
-3.  Print a test page.
-
-### Components
-
-- Anything with an extension of `.zsh` in `~/.oh-my-zsh/custom` will get automatically included into your shell.
-- Anything in `~/.dotfiles/bin/` is in your `$PATH` and available everywhere.
-
-### Manual Setup:
-
-- Automatically Move Archives After Extraction in macOS
-  - In macOS X Finder hit Command+Shift+G to summon “Go To Folder”, enter the following path the box: `/System/Library/CoreServices/Applications`
-  - Locate and launch the app named “Archive Utility”
-  - Pull down the “Archive Utility” menu and select “Preferences”
-  - Choose the menu next to “After Expanding:” and set it to “move archive to…”
-- [Install iTerm2 Themes](http://iterm2colorschemes.com/)
-  ![Import](https://raw.githubusercontent.com/dstroot/dotfiles/master/img/iTerm2.png)
-- If macOS finder runs very slowly: `rm ~/Library/Caches/CloudKit/CloudKitMetadata*;killall cloudd`
-- Install docker https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac
-- npm install --global pure-prompt
-
-
-
   https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
