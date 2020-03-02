@@ -84,6 +84,6 @@ If you run into any issues, please [open an issue](https://github.com/dstroot/ma
 
 - Way back in the day I forked [Zach Holman's](http://github.com/holman)' excellent [dotfiles](http://github.com/holman/dotfiles) as my initial starting point. I liked his organization and approach.
 - Much of the OSX defaults script comes from [Mathias Bynens'](https://github.com/mathiasbynens/) amazing [dotfiles](https://github.com/mathiasbynens/dotfiles). Mathias' OSX defaults script is legendary.
-
-  [MacOS Sierra](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c)
-  https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
+- [Setting up a new Mac](https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/)
+- [MacOS Sierra Stuff](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c)
+  
