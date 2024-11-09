@@ -72,10 +72,10 @@ clone_dotfiles() {
 clone_macos() { 
     if [ ! -d "$HOME/.macos" ]; then
       echo "${FMT_BLUE}Cloning .macos...${FMT_RESET}"
-      git clone https://github.com/dstroot/.macos.git .dotfiles
+      git clone https://github.com/dstroot/.macos.git .macos
       echo "${FMT_GREEN}....is now installed!${FMT_RESET}"
     else
-      fmt_error ".dotfiles already exists!"
+      fmt_error ".macos already exists!"
     fi
 }
 
