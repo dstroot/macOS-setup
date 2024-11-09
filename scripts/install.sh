@@ -14,11 +14,6 @@ set -e
 USER=${USER:-$(id -u -n)}
 HOME="${HOME:-$(eval echo ~$USER)}"
 
-# Default settings
-REPO=${REPO:-ohmyzsh/ohmyzsh}
-REMOTE=${REMOTE:-https://github.com/${REPO}.git}
-BRANCH=${BRANCH:-master}
-
 command_exists() {
   command -v "$@" >/dev/null 2>&1
 }
@@ -44,13 +39,6 @@ fmt_error() {
 }
 
 setup_git() {
-  # Prevent the cloned repository from having insecure permissions. Failing to do
-  # so causes compinit() calls to fail with "command not found: compdef" errors
-  # for users with insecure umasks (e.g., "002", allowing group writability). Note
-  # that this will be ignored under Cygwin by default, as Windows ACLs take
-  # precedence over umasks except for filesystems mounted with option "noacl".
-  umask g-w,o-w
-
   command_exists git || {
     fmt_error "git is not installed"
     exit 1
