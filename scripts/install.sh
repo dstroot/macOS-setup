@@ -37,15 +37,15 @@ setup_color() {
 
 # logging functions
 fmt_info() {
-  printf '%sError: %s%s\n' "${FMT_BOLD}${FMT_BLUE}" "$*" "$FMT_RESET" >&2
+  printf '%sInfo: %s%s\n' "${FMT_BOLD}${FMT_BLUE}" "$*" "$FMT_RESET" >&2
 }
 
 fmt_warning() {
-  printf '%sError: %s%s\n' "${FMT_BOLD}${FMT_YELLOW}" "$*" "$FMT_RESET" >&2
+  printf '%sWarning: %s%s\n' "${FMT_BOLD}${FMT_YELLOW}" "$*" "$FMT_RESET" >&2
 }
 
 fmt_success() {
-  printf '%sError: %s%s\n' "${FMT_BOLD}${FMT_GREEN}" "$*" "$FMT_RESET" >&2
+  printf '%sSuccess: %s%s\n' "${FMT_BOLD}${FMT_GREEN}" "$*" "$FMT_RESET" >&2
 }
 
 fmt_error() {
