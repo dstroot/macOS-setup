@@ -75,9 +75,11 @@ clone_repo() {
 restore_mackup() {
   if [ ! -f "$HOME"/.mackup.cfg ]; then
     fmt_info "Restoring Mackup..."
+    brew install mackup
     cp "$HOME"/.dotfiles/mackup/.mackup.cfg ~/
     cp -r "$HOME"/.dotfiles/mackup/.mackup ~/
-    yes Yes | mackup restore
+    # yes Yes | mackup restore
+    mackup restore
     fmt_success "Mackup restored!"
   else
     fmt_error "Mackup already restored!"
@@ -91,7 +93,7 @@ main() {
   clone_repo ".dotfiles"
   clone_repo ".macos"
 
-  # restore_mackup
+  restore_mackup
 }
 
 main "$@"
