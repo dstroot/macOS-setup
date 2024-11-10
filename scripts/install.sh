@@ -88,7 +88,7 @@ restore_mackup() {
 install() {
   brew install fnm
   fnm use 20 --install-if-missing
-  eva "$(fnm env --use-on-cd --shell zsh)"
+  eval "$(fnm env --use-on-cd --shell zsh)"
   npm install -g npm-check-updates
 }
 
