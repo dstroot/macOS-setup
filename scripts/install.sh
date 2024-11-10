@@ -78,12 +78,18 @@ restore_mackup() {
     brew install mackup
     cp "$HOME"/.dotfiles/mackup/.mackup.cfg ~/
     cp -r "$HOME"/.dotfiles/mackup/.mackup ~/
-    # yes Yes | mackup restore
-    mackup restore
+    yes Yes | mackup restore
     fmt_success "Mackup restored!"
   else
     fmt_error "Mackup already restored!"
   fi
+}
+
+install() {
+  brew install fnm
+  fnm use 20 --install-if-missing
+  eva "$(fnm env --use-on-cd --shell zsh)"
+  npm install -g npm-check-updates
 }
 
 main() {
@@ -92,6 +98,8 @@ main() {
 
   clone_repo ".dotfiles"
   clone_repo ".macos"
+  install 
+  # ~/.dotfiles/bin/dot
 
   restore_mackup
 }
