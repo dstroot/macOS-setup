@@ -76,6 +76,7 @@ restore_mackup() {
   if [ ! -f "$HOME"/.mackup.cfg ]; then
     fmt_info "Restoring Mackup..."
     cp "$HOME"/.dotfiles/mackup/.mackup.cfg ~/
+    cp -r "$HOME"/.dotfiles/mackup/.mackup ~/
     yes Yes | mackup restore
     fmt_success "Mackup restored!"
   else
