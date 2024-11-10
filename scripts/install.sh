@@ -91,7 +91,7 @@ main() {
   clone_repo ".dotfiles"
   clone_repo ".macos"
 
-  restore_mackup
+  # restore_mackup
 }
 
 main "$@"
