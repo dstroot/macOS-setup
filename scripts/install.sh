@@ -66,6 +66,8 @@ clone_repo() {
   if [ ! -d "$HOME/$1" ]; then
     fmt_info "Cloning $1..."
     git clone https://github.com/dstroot/$1.git 
+    cd "$1"
+    git submodule init && git submodule update
     fmt_success "$1 cloned!"
   else
     fmt_error "$1 already exists!"
