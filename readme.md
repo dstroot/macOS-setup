@@ -41,7 +41,7 @@ brew update && brew doctor
 Install a few things manually to get bootstrapped:
 
 ```
-brew install mackup gum fnm
+brew install mackup gum fnm gh
 ```
 
 | Program | Purpose              |

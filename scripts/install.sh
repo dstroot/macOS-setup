@@ -39,27 +39,31 @@ setup_color() {
 fmt_info() {
   printf '%sInfo: %s%s\n' "${FMT_BOLD}${FMT_BLUE}" "$*" "$FMT_RESET" >&2
 }
-
 fmt_warning() {
   printf '%sWarning: %s%s\n' "${FMT_BOLD}${FMT_YELLOW}" "$*" "$FMT_RESET" >&2
 }
-
 fmt_success() {
   printf '%sSuccess: %s%s\n' "${FMT_BOLD}${FMT_GREEN}" "$*" "$FMT_RESET" >&2
 }
-
 fmt_error() {
   printf '%sError: %s%s\n' "${FMT_BOLD}${FMT_RED}" "$*" "$FMT_RESET" >&2
 }
 
 
-setup_git() {
+verify_git() {
   command_exists git || {
     fmt_error "git is not installed"
     exit 1
   }
 
   cd $HOME
+}
+
+verify_homebrew() {
+  command_exists brew || {
+    fmt_error "Homebrew is not installed"
+    exit 1
+  }
 }
 
 clone_repo() {
@@ -87,23 +91,43 @@ restore_mackup() {
   fi
 }
 
-install() {
-  brew install fnm
-  fnm use 20 --install-if-missing
-  eval "$(fnm env --use-on-cd --shell zsh)"
-  npm install -g npm-check-updates
+install_brewfile() {
+  fmt_info "Validating Brewfile..."
+  if [ -f "$HOME/.Brewfile" ]; then
+    # Install everything!  
+    fmt_info "Installing Homebrew Apps..."
+    brew bundle --file="$HOME"/.Brewfile
+  else
+    fmt_error "Brewfile not found!"
+    exit 1
+  fi
+}
+
+setup_autofs() {
+    sh "$HOME"/.dotfiles/macos/autofs.sh
 }
 
 main() {
+  # housekeeping
   setup_color
-  setup_git
+  verify_git
+  verify_homebrew
 
+  # clone our key repos first
   clone_repo ".dotfiles"
   clone_repo ".macos"
-  install 
-  # ~/.dotfiles/bin/dot
 
+  # the next thing we should do is restore our .dotfiles, right?
   restore_mackup
+
+  # next install Homebrew apps
+  install_brewfile
+
+  # setup NAS folders
+  setup_autofs
+
+  # run `dot` script as final validation/install
+  sh "$HOME"/.dotfiles/bin/dot
 }
 
 main "$@"
