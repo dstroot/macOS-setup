@@ -55,8 +55,6 @@ verify_git() {
     fmt_error "git is not installed"
     exit 1
   }
-
-  cd $HOME
 }
 
 verify_homebrew() {
@@ -68,6 +66,7 @@ verify_homebrew() {
 
 clone_repo() {
   if [ ! -d "$HOME/$1" ]; then
+    cd "$HOME"
     fmt_info "Cloning $1..."
     git clone https://github.com/dstroot/$1.git 
     cd "$1"
@@ -94,7 +93,6 @@ restore_mackup() {
 install_brewfile() {
   fmt_info "Validating Brewfile..."
   if [ -f "$HOME/.Brewfile" ]; then
-    # Install everything!  
     fmt_info "Installing Homebrew Apps..."
     brew bundle --file="$HOME"/.Brewfile
   else
